@@ -27,8 +27,8 @@ Following instructions is tested for Ubuntu 14.04
 
 * Execute the following command to get everything you need in order to setup an environment *
 `sudo apt-get install build-essential git cmake libboost1.55-all-dev`
-* Execute the following command to copy a desired repository *
-`git clone https://github.com/cryptonotefoundation/cryptonote`
+* Execute the following command to copy the repository *
+`git clone https://github.com/PalladiumCo1n/palladium.git`
 * Execute the following command to get into the directory with copied repository *
 `cd cryptonote`
 * Execute the following command to build on all threads *
