@@ -15,15 +15,7 @@ You may download them from:
 
 To build, change to a directory where this file is located, and run `make`. The resulting executables can be found in `build/release/src`.
 
-**Advanced options:**
-
-* Parallel build: run `make -j<number of threads>` instead of `make`.
-* Debug build: run `make build-debug`.
-* Test suite: run `make test-release` to run tests in addition to building. Running `make test-debug` will do the same to the debug version.
-* Building with Clang: it may be possible to use Clang instead of GCC, but this may not work everywhere. To build, run `export CC=clang CXX=clang++` before running `make`.
-
-**Build environment setup:**
-Following instructions is tested for Ubuntu 14.04 
+**Ubuntu 14.04 Build:**
 
 * Execute the following command to get everything you need in order to setup an environment *
 `sudo apt-get install build-essential git cmake libboost1.55-all-dev`
@@ -31,8 +23,9 @@ Following instructions is tested for Ubuntu 14.04
 `git clone https://github.com/PalladiumCo1n/palladium.git`
 * Execute the following command to get into the directory with copied repository *
 `cd cryptonote`
-* Execute the following command to build on all threads *
-`make -j `nproc`` 
+* Execute the following command to build *
+
+```make -j `nproc` ```
 
 ### On Windows
 Dependencies: MSVC 2013 or later, CMake 2.8.6 or later, and Boost 1.55 or later. You may download them from:
