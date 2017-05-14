@@ -22,7 +22,7 @@ To build, change to a directory where this file is located, and run `make`. The 
 * Execute the following command to copy the repository *
 `git clone https://github.com/PalladiumCo1n/palladium.git`
 * Execute the following command to get into the directory with copied repository *
-`cd cryptonote`
+`cd palladium`
 * Execute the following command to build *
 
 ```make -j `nproc` ```
