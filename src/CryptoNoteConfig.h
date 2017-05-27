@@ -21,7 +21,7 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 //22 million atomic units
 //1 coin = 10^8 atomic units
 const uint64_t MONEY_SUPPLY                                  = UINT64_C(200000000000000);
-const unsigned EMISSION_SPEED_FACTOR                         = 19;
+const unsigned EMISSION_SPEED_FACTOR                         = 20;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 
@@ -66,7 +66,7 @@ const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json"
 
 
 const char     CRYPTONOTE_NAME[]                             = "palladiumcoin";
-const char GENESIS_COINBASE_TX_HEX[] = "013c01ff00019f88f3b501029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101643acb08d25a3e83b4f34bc13824814fb590dd6713c7e4f36f0bd7d26a873e63";
+const char GENESIS_COINBASE_TX_HEX[] = "013c01ff00018fc4f95a029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016b1876482df415df9fe9e2aa7890aad9502b357aae9110b91ef1458549933975";
 
 const uint8_t  CURRENT_TRANSACTION_VERSION                   =  1;
 const uint8_t  BLOCK_MAJOR_VERSION_1                         =  1;
