@@ -116,6 +116,7 @@ __attribute__((unused))
 // {<block height>, "<block hash>"},
 const std::initializer_list<CheckpointData> CHECKPOINTS = {
   { 4000, "8b5a63cb0299a6c451bbae49df9cb6827bd0f19250ae6cd532faddff89eda281" },
+  { 8000, "8c383350fa5e2de80e75c1115affde770b1a52d71702aabb348e8c1063b260c4" },
 };
 }
 
