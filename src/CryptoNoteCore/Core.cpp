@@ -923,16 +923,21 @@ namespace CryptoNote {
 
 	bool core::getTransactionsByPaymentId(const Crypto::Hash& paymentId, std::vector<Transaction>& transactions) {
 		std::vector<Crypto::Hash> blockchainTransactionHashes;
-		if (!m_blockchain.getTransactionIdsByPaymentId(paymentId, blockchainTransactionHashes)) {
-			return false;
-		}
+		m_blockchain.getTransactionIdsByPaymentId(paymentId, blockchainTransactionHashes);
+
 		std::vector<Crypto::Hash> poolTransactionHashes;
-		if (!m_mempool.getTransactionIdsByPaymentId(paymentId, poolTransactionHashes)) {
-			return false;
-		}
+		m_mempool.getTransactionIdsByPaymentId(paymentId, poolTransactionHashes);
+
 		std::list<Transaction> txs;
 		std::list<Crypto::Hash> missed_txs;
-		blockchainTransactionHashes.insert(blockchainTransactionHashes.end(), poolTransactionHashes.begin(), poolTransactionHashes.end());
+
+		if (!poolTransactionHashes.empty()) {
+			blockchainTransactionHashes.insert(blockchainTransactionHashes.end(), poolTransactionHashes.begin(), poolTransactionHashes.end());
+		}
+
+		if (blockchainTransactionHashes.empty()) {
+			return false;
+		}
 
 		getTransactions(blockchainTransactionHashes, txs, missed_txs, true);
 		if (missed_txs.size() > 0) {
@@ -942,6 +947,7 @@ namespace CryptoNote {
 		transactions.insert(transactions.end(), txs.begin(), txs.end());
 		return true;
 	}
+
 
 	std::error_code core::executeLocked(const std::function<std::error_code()>& func) {
 		std::lock_guard<decltype(m_mempool)> lk(m_mempool);
