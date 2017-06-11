@@ -239,7 +239,8 @@ WalletGreen::WalletGreen(System::Dispatcher& dispatcher, const Currency& currenc
   m_pendingBalance(0),
   m_transactionSoftLockTime(transactionSoftLockTime)
 {
-  m_upperTransactionSizeLimit = m_currency.blockGrantedFullRewardZone() * 2 - m_currency.minerTxBlobReservedSize();
+  m_upperTransactionSizeLimit = m_currency.blockGrantedFullRewardZone() / 2 - m_currency.minerTxBlobReservedSize();
+
   m_readyEvent.set();
 }
 

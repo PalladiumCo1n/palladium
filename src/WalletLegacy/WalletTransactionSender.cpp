@@ -70,7 +70,7 @@ WalletTransactionSender::WalletTransactionSender(const Currency& currency, Walle
   m_isStoping(false),
   m_keys(keys),
   m_transferDetails(transfersContainer),
-  m_upperTransactionSizeLimit(m_currency.blockGrantedFullRewardZone() * 2 - m_currency.minerTxBlobReservedSize()) {}
+  m_upperTransactionSizeLimit(m_currency.blockGrantedFullRewardZone() / 2 - m_currency.minerTxBlobReservedSize()) {}
 
 void WalletTransactionSender::stop() {
   m_isStoping = true;
