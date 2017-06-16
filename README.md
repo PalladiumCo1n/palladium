@@ -15,10 +15,10 @@ You may download them from:
 
 To build, change to a directory where this file is located, and run `make`. The resulting executables can be found in `build/release/src`.
 
-**Ubuntu 14.04 Build:**
+**Ubuntu 16.04 Build:**
 
 * Execute the following command to get everything you need in order to setup an environment *
-`sudo apt-get install build-essential git cmake libboost1.55-all-dev`
+`sudo apt-get install build-essential git cmake libboost1.58-all-dev`
 * Execute the following command to copy the repository *
 `git clone https://github.com/PalladiumCo1n/palladium.git`
 * Execute the following command to get into the directory with copied repository *
