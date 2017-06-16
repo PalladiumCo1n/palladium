@@ -40,7 +40,7 @@ const size_t   DIFFICULTY_CUT                                = 60;  // timestamp
 const size_t   DIFFICULTY_LAG                                = 15;
 static_assert(2 * DIFFICULTY_CUT <= DIFFICULTY_WINDOW - 2, "Bad DIFFICULTY_WINDOW or DIFFICULTY_CUT");
 
-const size_t   MAX_BLOCK_SIZE_INITIAL                        =  20 * 1024;
+const size_t   MAX_BLOCK_SIZE_INITIAL                        = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE * 10;;
 const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_NUMERATOR         = 100 * 1024;
 const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_DENOMINATOR       = 365 * 24 * 60 * 60 / DIFFICULTY_TARGET;
 
@@ -99,7 +99,10 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "0101010101010101
 
 const std::initializer_list<const char*> SEED_NODES = {
   "144.217.14.221:45174",
+  "37.187.244.214:45174",
+  "84.200.105.175:45174",
   "seed.greyblockgames.com:45174",
+  "traid.me:45174",
 };
 
 struct CheckpointData {
@@ -115,6 +118,9 @@ __attribute__((unused))
 // {<block height>, "<block hash>"},
 const std::initializer_list<CheckpointData> CHECKPOINTS = {
   { 4000, "8b5a63cb0299a6c451bbae49df9cb6827bd0f19250ae6cd532faddff89eda281" },
+  { 8000, "8c383350fa5e2de80e75c1115affde770b1a52d71702aabb348e8c1063b260c4" },
+  { 12000, "07512c8f09695f4959a68e98440cc0d1174b39a7eb5ff7da4e0838e62c7e2b7d" },
+  { 14950, "0141c33f8136a2bd73756ebccbf0c6dd0d47e98e9045c87a6653da28f1ad5672" }
 };
 }
 
