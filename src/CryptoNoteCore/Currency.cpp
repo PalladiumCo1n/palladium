@@ -358,7 +358,7 @@ namespace CryptoNote {
 		assert(m_difficultyWindow >= 2);
 
 		//upgrade to the new difficulty? Should probably check based upon block version
-		if (false) {
+		if (true) {
 			assert(m_difficultyWindow >= 2);
 			size_t m_difficultyWindow_2 = CryptoNote::parameters::DIFFICULTY_WINDOW_V2;
 			assert(m_difficultyWindow_2 >= 2);
